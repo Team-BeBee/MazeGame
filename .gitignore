@@ -1,0 +1,31 @@
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+MemoryCaptures/
+AssetStoreTools*
+
+# Visual Studio cache
+.vs/
+*.csproj
+*.sln
+*.user
+*.tmp
+
+# Unity cache
+UserSettings/
+*.pidb.meta
+*.pidb
+*.booproj
+*.svd
+
+# Crash / Report files
+*.stacktrace
+*.apk
+*.aab
+
+# OS files
+.DS_Store
+Thumbs.db
