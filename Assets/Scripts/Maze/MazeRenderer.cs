@@ -10,7 +10,6 @@ public class MazeRenderer : MonoBehaviour
     public float cellSize = 1f;
 
     private MazeGrid grid;
-    private readonly List<Vector3> walkableCells = new List<Vector3>();
 
     public void Render(MazeGrid grid)
     {
@@ -20,7 +19,6 @@ public class MazeRenderer : MonoBehaviour
         }
 
         this.grid = grid;
-        walkableCells.Clear();
 
         // 이전에 생성된 타일들을 모두 정리
         List<Transform> children = new List<Transform>();
@@ -52,13 +50,9 @@ public class MazeRenderer : MonoBehaviour
                 if (cell.Type == CellType.Path)
                 {
                     pathCells.Add(new Vector2Int(x, y));
-                    walkableCells.Add(position);
                 }
             }
         }
-
-        // 텔레포트용 이동 가능 위치 등록
-        TeleportUtility.RegisterWalkableCells(new List<Vector3>(walkableCells));
 
         // 출구 문 배치 (골문)
         Vector2Int goalPos = new Vector2Int(grid.Width - 2, grid.Height - 2);
@@ -66,9 +60,10 @@ public class MazeRenderer : MonoBehaviour
         {
             Vector3 goalPosition = new Vector3(goalPos.x * cellSize, 0f, goalPos.y * cellSize);
             GameObject goalDoor = Instantiate(doorPrefab, goalPosition, Quaternion.identity, transform);
-            GoalDoor goalDoorComponent = goalDoor.GetComponent<GoalDoor>() ?? goalDoor.AddComponent<GoalDoor>();
-
-            goalDoorComponent.doorType = DoorType.Goal;
+            if (goalDoor.GetComponent<GoalDoor>() == null)
+            {
+                goalDoor.AddComponent<GoalDoor>();
+            }
         }
 
         // 랜덤 가짜 문 배치
@@ -98,13 +93,9 @@ public class MazeRenderer : MonoBehaviour
                 used.Add(pos);
                 Vector3 spawnPosition = new Vector3(pos.x * cellSize, 0f, pos.y * cellSize);
                 GameObject fakeDoor = Instantiate(doorPrefab, spawnPosition, Quaternion.identity, transform);
-                FakeDoor fakeDoorComponent = fakeDoor.GetComponent<FakeDoor>() ?? fakeDoor.AddComponent<FakeDoor>();
-
-                fakeDoorComponent.doorType = DoorType.Fake;
-
-                if (PenaltyManager.Instance != null)
+                if (fakeDoor.GetComponent<FakeDoor>() == null)
                 {
-                    PenaltyManager.Instance.RegisterFakeDoor(fakeDoorComponent);
+                    fakeDoor.AddComponent<FakeDoor>();
                 }
             }
         }
