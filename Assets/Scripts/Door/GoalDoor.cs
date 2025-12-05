@@ -45,8 +45,8 @@ public class GoalDoor : DoorBase
         }
     }
 
-    protected override void PlayOpenSound()
-    {
-        SoundManager.Instance.Play("goal_door_open");
-    }
+    // protected override void PlayOpenSound()
+    // {
+    //     SoundManager.Instance.Play("goal_door_open");
+    // }
 }

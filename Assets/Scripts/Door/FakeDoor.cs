@@ -39,8 +39,8 @@ public class FakeDoor : DoorBase
         }
     }
 
-    protected override void PlayOpenSound()
-    {
-        SoundManager.Instance.Play("fake_door_open");
-    }
+    // protected override void PlayOpenSound()
+    // {
+    //     SoundManager.Instance.Play("fake_door_open");
+    // }
 }

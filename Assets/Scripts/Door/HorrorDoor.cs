@@ -40,8 +40,8 @@ public class HorrorDoor : DoorBase
             anim.SetTrigger("Open");
     }
 
-    protected override void PlayOpenSound()
-    {
-        SoundManager.Instance.Play("horror_door_open");
-    }
+    // protected override void PlayOpenSound()
+    // {
+    //     SoundManager.Instance.Play("horror_door_open");
+    // }
 }
