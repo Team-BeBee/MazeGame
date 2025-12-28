@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 155678418}
   - component: {fileID: 155678417}
   - component: {fileID: 155678416}
+  - component: {fileID: 155678421}
   m_Layer: 0
   m_Name: 'Player '
   m_TagString: Player
@@ -220,6 +221,31 @@ Transform:
   - {fileID: 453372360}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &155678421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155678415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb13cbc35341ec488dc5745887cd469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WallContactTrail
+  wallLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  markPrefab: {fileID: 5684184778039376167, guid: de4f026de1f888744b8ae9d33a266840, type: 3}
+  surfaceOffset: 0.002
+  cooldownSeconds: 0.01
+  maxMarks: 1000
+  horizontalSpread: 0.03
+  verticalSpread: 0.03
+  useFixedHeight: 1
+  fixedHeightFromPlayer: 1.2
+  createMarksRoot: 1
+  marksRootName: TrailMarksRoot
 --- !u!1 &323352098
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,7 +479,7 @@ MonoBehaviour:
   mazeRenderer: {fileID: 1587043786}
   baseWidth: 21
   baseHeight: 21
-  sizeGrowthPerLevel: 2
+  sizeGrowthPerLevel: 16
   useRandomSeed: 1
   baseSeed: 100
 --- !u!4 &803418164
