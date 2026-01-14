@@ -4,20 +4,22 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="STfXQw06dsrU-GKLD7xU-7" edge="1" parent="1" source="STfXQw06dsrU-GKLD7xU-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="STfXQw06dsrU-GKLD7xU-6" value="">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="STfXQw06dsrU-GKLD7xU-7" edge="1" parent="1" source="STfXQw06dsrU-GKLD7xU-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="gkOato_9rZHMwskMwgJ5-5" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="182.5" y="150" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="STfXQw06dsrU-GKLD7xU-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="크리쳐 소환" vertex="1">
           <mxGeometry height="70" width="90" x="137.5" y="40" as="geometry" />
         </mxCell>
         <mxCell id="STfXQw06dsrU-GKLD7xU-3" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="크리쳐 제거" vertex="1">
-          <mxGeometry height="70" width="90" x="137.5" y="800" as="geometry" />
+          <mxGeometry height="70" width="90" x="137.5" y="700" as="geometry" />
         </mxCell>
-        <mxCell id="gkOato_9rZHMwskMwgJ5-27" edge="1" parent="1" source="STfXQw06dsrU-GKLD7xU-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="gkOato_9rZHMwskMwgJ5-5">
+        <mxCell id="gkOato_9rZHMwskMwgJ5-27" edge="1" parent="1" source="STfXQw06dsrU-GKLD7xU-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="gkOato_9rZHMwskMwgJ5-5">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="300" y="505" />
-              <mxPoint x="300" y="400" />
+              <mxPoint x="50" y="405" />
+              <mxPoint x="50" y="180" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -35,16 +37,13 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="STfXQw06dsrU-GKLD7xU-5" parent="1" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" value="Player가 공격거리내에&amp;nbsp;&lt;div&gt;존재하는가?&lt;/div&gt;" vertex="1">
-          <mxGeometry height="70" width="145" x="110" y="470" as="geometry" />
-        </mxCell>
-        <mxCell id="STfXQw06dsrU-GKLD7xU-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Player를 가까운&lt;div&gt;거리까지 추격&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="120" x="122.5" y="150" as="geometry" />
+          <mxGeometry height="70" width="145" x="110" y="370" as="geometry" />
         </mxCell>
         <mxCell id="gkOato_9rZHMwskMwgJ5-31" edge="1" parent="1" source="STfXQw06dsrU-GKLD7xU-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="STfXQw06dsrU-GKLD7xU-3" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="STfXQw06dsrU-GKLD7xU-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Player 생명력 감소" vertex="1">
-          <mxGeometry height="60" width="120" x="122.5" y="680" as="geometry" />
+          <mxGeometry height="60" width="120" x="122.5" y="580" as="geometry" />
         </mxCell>
         <mxCell id="gkOato_9rZHMwskMwgJ5-16" edge="1" parent="1" source="gkOato_9rZHMwskMwgJ5-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="gkOato_9rZHMwskMwgJ5-10">
           <mxGeometry relative="1" as="geometry" />
@@ -54,29 +53,22 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="gkOato_9rZHMwskMwgJ5-24" edge="1" parent="1" source="gkOato_9rZHMwskMwgJ5-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="gkOato_9rZHMwskMwgJ5-5">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="gkOato_9rZHMwskMwgJ5-25" connectable="0" parent="gkOato_9rZHMwskMwgJ5-24" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="N" vertex="1">
-          <mxGeometry relative="1" x="-0.6" y="6" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="gkOato_9rZHMwskMwgJ5-2" parent="1" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" value="Player가 먼 거리에&lt;div&gt;존재하는가?&lt;/div&gt;" vertex="1">
           <mxGeometry height="70" width="145" x="110" y="250" as="geometry" />
         </mxCell>
         <mxCell id="gkOato_9rZHMwskMwgJ5-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Player 추격" vertex="1">
-          <mxGeometry height="60" width="120" x="122.5" y="370" as="geometry" />
+          <mxGeometry height="60" width="120" x="122.5" y="150" as="geometry" />
         </mxCell>
         <mxCell id="gkOato_9rZHMwskMwgJ5-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="크리쳐 배회" vertex="1">
           <mxGeometry height="60" width="120" x="310" y="255" as="geometry" />
         </mxCell>
-        <mxCell id="gkOato_9rZHMwskMwgJ5-18" edge="1" parent="1" source="gkOato_9rZHMwskMwgJ5-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="STfXQw06dsrU-GKLD7xU-6">
+        <mxCell id="gkOato_9rZHMwskMwgJ5-18" edge="1" parent="1" source="gkOato_9rZHMwskMwgJ5-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="gkOato_9rZHMwskMwgJ5-5">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="670" y="285" />
               <mxPoint x="670" y="180" />
             </Array>
+            <mxPoint x="360" y="160" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="gkOato_9rZHMwskMwgJ5-20" connectable="0" parent="gkOato_9rZHMwskMwgJ5-18" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Y" vertex="1">
@@ -95,20 +87,27 @@
         <mxCell id="gkOato_9rZHMwskMwgJ5-14" parent="1" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" value="Player가 아주 먼 거리에&lt;div&gt;존재하는가?&lt;/div&gt;" vertex="1">
           <mxGeometry height="70" width="145" x="480" y="250" as="geometry" />
         </mxCell>
-        <mxCell id="gkOato_9rZHMwskMwgJ5-15" edge="1" parent="1" source="STfXQw06dsrU-GKLD7xU-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="gkOato_9rZHMwskMwgJ5-2">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="gkOato_9rZHMwskMwgJ5-15" edge="1" parent="1" source="gkOato_9rZHMwskMwgJ5-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="gkOato_9rZHMwskMwgJ5-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="182.5" y="210" as="sourcePoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="gkOato_9rZHMwskMwgJ5-17" edge="1" parent="1" source="gkOato_9rZHMwskMwgJ5-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="gkOato_9rZHMwskMwgJ5-14">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="gkOato_9rZHMwskMwgJ5-26" edge="1" parent="1" source="gkOato_9rZHMwskMwgJ5-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="STfXQw06dsrU-GKLD7xU-5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="gkOato_9rZHMwskMwgJ5-30" edge="1" parent="1" source="gkOato_9rZHMwskMwgJ5-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="STfXQw06dsrU-GKLD7xU-8" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="gkOato_9rZHMwskMwgJ5-28" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="크리쳐 공격모션 재생" vertex="1">
-          <mxGeometry height="60" width="120" x="122.5" y="584.5" as="geometry" />
+          <mxGeometry height="60" width="120" x="122.5" y="484.5" as="geometry" />
+        </mxCell>
+        <mxCell id="K24J6_dmdgMmWz9R1N3u-1" edge="1" parent="1" source="gkOato_9rZHMwskMwgJ5-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="STfXQw06dsrU-GKLD7xU-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="K24J6_dmdgMmWz9R1N3u-2" connectable="0" parent="K24J6_dmdgMmWz9R1N3u-1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="N" vertex="1">
+          <mxGeometry relative="1" x="-0.6533" y="2" as="geometry">
+            <mxPoint x="6" y="1" as="offset" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
