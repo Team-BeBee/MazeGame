@@ -11,9 +11,9 @@ TagManager:
   - wall
   - Water
   - UI
-  - 
-  - 
-  - 
+  - PassableWall
+  - OuterWall
+  - DoorWall
   - 
   - 
   - 
