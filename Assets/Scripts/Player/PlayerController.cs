@@ -1,6 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(SpeedModifierManager))]
 public class PlayerController : MonoBehaviour
 {
     [Header("Speed")]
@@ -32,11 +33,14 @@ public class PlayerController : MonoBehaviour
 
     private CharacterController cc;
     private PlayerInput input;
+    private SpeedModifierManager speedModifierManager;
 
     private Vector3 velocity;
     private float currentSpeed;
     private Vector3 lastMoveDir;
     private float resistanceMultiplier = 1f;
+    private float cachedAdd = 0f;
+    private float cachedMul = 1f;
 
     private float jumpBufferTimer = 0f;
     private float coyoteTimer = 0f;
@@ -45,9 +49,32 @@ public class PlayerController : MonoBehaviour
     {
         cc = GetComponent<CharacterController>();
         input = GetComponent<PlayerInput>();
+        speedModifierManager = GetComponent<SpeedModifierManager>();
         lastMoveDir = transform.forward;
     }
 
+    private void OnEnable()
+    {
+        if (speedModifierManager == null)
+            return;
+
+        speedModifierManager.ModifiersChanged += OnSpeedModifiersChanged;
+        speedModifierManager.RequestCurrentValues();
+    }
+
+    private void OnDisable()
+    {
+        if (speedModifierManager == null)
+            return;
+
+        speedModifierManager.ModifiersChanged -= OnSpeedModifiersChanged;
+    }
+
+    private void OnSpeedModifiersChanged(float addSum, float mulProduct)
+    {
+        cachedAdd = addSum;
+        cachedMul = mulProduct;
+    }
     private void Update()
     {
         bool jumpPressedThisFrame = Input.GetKeyDown(KeyCode.Space);
@@ -91,7 +118,9 @@ public class PlayerController : MonoBehaviour
         bool sprint = hasInput &&
                       (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift));
 
-        float targetSpeed = hasInput ? (sprint ? sprintSpeed : walkSpeed) : 0f;
+        float baseSpeed = sprint ? sprintSpeed : walkSpeed;
+        float modifiedBaseSpeed = (baseSpeed + cachedAdd) * cachedMul;
+        float targetSpeed = hasInput ? modifiedBaseSpeed : 0f;
         float accelBase = sprint ? sprintAcceleration : walkAcceleration;
 
         if (hasInput)
