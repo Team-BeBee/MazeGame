@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MazeRenderer : MonoBehaviour
 {
+    private const string PassableWallLayerName = "PassableWall";
+    private const string OuterWallLayerName = "OuterWall";
+    private const string DoorWallLayerName = "DoorWall";
     public GameObject wallPrefab;
     public GameObject floorPrefab;
 
@@ -108,13 +111,15 @@ public class MazeRenderer : MonoBehaviour
             Vector3 pos = VerticalWallCenter(vx, y);
             Quaternion rot = Quaternion.Euler(0f, 90f, 0f);
 
-            GameObject prefabToUse = doorPrefabMap.TryGetValue(edge, out var doorPrefab)
-                ? doorPrefab
-                : wallPrefab;
+            bool isDoorWall = doorPrefabMap.TryGetValue(edge, out var doorPrefab);
+            GameObject prefabToUse = isDoorWall ? doorPrefab : wallPrefab;
 
             if (prefabToUse == null) continue;
 
             GameObject spawned = SpawnWithGroundSnap(prefabToUse, pos, rot);
+
+            bool isOuterWall = vx == 0 || vx == grid.Width;
+            ApplyWallSettings(spawned, isDoorWall, isOuterWall);
 
             // ✅ FakeDoor면 PenaltyManager에 등록 (변환 로직은 PenaltyManager가 담당)
             RegisterIfFakeDoor(spawned);
@@ -130,13 +135,15 @@ public class MazeRenderer : MonoBehaviour
             Vector3 pos = HorizontalWallCenter(x, hy);
             Quaternion rot = Quaternion.identity;
 
-            GameObject prefabToUse = doorPrefabMap.TryGetValue(edge, out var doorPrefab)
-                ? doorPrefab
-                : wallPrefab;
+            bool isDoorWall = doorPrefabMap.TryGetValue(edge, out var doorPrefab);
+            GameObject prefabToUse = isDoorWall ? doorPrefab : wallPrefab;
 
             if (prefabToUse == null) continue;
 
             GameObject spawned = SpawnWithGroundSnap(prefabToUse, pos, rot);
+
+            bool isOuterWall = hy == 0 || hy == grid.Height;
+            ApplyWallSettings(spawned, isDoorWall, isOuterWall);
 
             // ✅ FakeDoor면 PenaltyManager에 등록
             RegisterIfFakeDoor(spawned);
@@ -243,8 +250,67 @@ private void RegisterIfFakeDoor(GameObject spawned)
             float bottomY = r.bounds.min.y;
             go.transform.position += new Vector3(0f, -bottomY, 0f);
         }
+        if (go.GetComponent<PassableWall>() == null)
+        {
+            go.AddComponent<PassableWall>();
+        }
 
         return go;
+    }
+
+    private void ApplyWallSettings(GameObject wallObject, bool isDoorWall, bool isOuterWall)
+    {
+        if (wallObject == null)
+        {
+            return;
+        }
+
+        if (isDoorWall)
+        {
+            ApplyLayerRecursively(wallObject, DoorWallLayerName);
+            return;
+        }
+
+        if (isOuterWall)
+        {
+            ApplyLayerRecursively(wallObject, OuterWallLayerName);
+            return;
+        }
+
+        ApplyLayerRecursively(wallObject, PassableWallLayerName);
+        EnsurePassableWall(wallObject);
+    }
+
+    private void EnsurePassableWall(GameObject wallObject)
+    {
+        if (wallObject.GetComponent<PassableWall>() != null)
+        {
+            return;
+        }
+
+        wallObject.AddComponent<PassableWall>();
+    }
+
+    private void ApplyLayerRecursively(GameObject target, string layerName)
+    {
+        int layer = LayerMask.NameToLayer(layerName);
+        if (layer < 0)
+        {
+            Debug.LogWarning($"[MazeRenderer] 레이어 '{layerName}'가 없습니다. 레이어를 추가해주세요.");
+            return;
+        }
+
+        SetLayerRecursively(target.transform, layer);
+    }
+
+    private void SetLayerRecursively(Transform root, int layer)
+    {
+        root.gameObject.layer = layer;
+
+        foreach (Transform child in root)
+        {
+            SetLayerRecursively(child, layer);
+        }
     }
 
     // ------------------- Types -------------------

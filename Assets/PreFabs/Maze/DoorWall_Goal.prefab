@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5861829878106353141}
   - component: {fileID: 8729085170654495381}
   - component: {fileID: -4566003409634910876}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DoorWall_Goal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
