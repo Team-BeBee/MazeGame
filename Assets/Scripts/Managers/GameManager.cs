@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
     {
         if (isInitialized)
         {
-            Debug.Log("[GameManager] 이미 초기화된 상태입니다.");
             return;
         }
 
@@ -44,11 +43,8 @@ public class GameManager : MonoBehaviour
 
         if (levelManager == null)
         {
-            Debug.LogError("[GameManager] LevelManager를 찾을 수 없어 게임을 시작할 수 없습니다.");
             return;
         }
-
-        Debug.Log("[GameManager] 게임 초기화 완료. 첫 레벨을 시작합니다.");
         levelManager.StartLevel(0);
     }
 

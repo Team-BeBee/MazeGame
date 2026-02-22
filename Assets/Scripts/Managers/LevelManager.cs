@@ -50,7 +50,6 @@ public class LevelManager : MonoBehaviour
 
         if (!TryPrepareRenderer())
         {
-            Debug.LogError("[LevelManager] MazeRenderer를 찾을 수 없습니다. 레벨을 시작할 수 없습니다.");
             return;
         }
 
@@ -59,8 +58,6 @@ public class LevelManager : MonoBehaviour
 
         mazeRenderer.Render(grid);
         RegisterPlayerForTeleport();
-
-        Debug.Log($"[LevelManager] 레벨 {CurrentLevelIndex} 시작 완료. 미로 크기: {config.Width}x{config.Height}");
     }
 
     /// <summary>다음 레벨로 진행합니다.</summary>
@@ -96,7 +93,6 @@ public class LevelManager : MonoBehaviour
     {
         if (string.IsNullOrEmpty(mazeSceneName))
         {
-            Debug.LogError("[LevelManager] mazeSceneName이 비어 있습니다. 복귀할 씬을 알 수 없습니다.");
             return;
         }
 
@@ -164,7 +160,6 @@ public class LevelManager : MonoBehaviour
 
         if (playerObj == null)
         {
-            Debug.LogWarning("[LevelManager] Player를 찾지 못해 TeleportUtility.RegisterPlayer를 호출하지 못했습니다.");
             return;
         }
 

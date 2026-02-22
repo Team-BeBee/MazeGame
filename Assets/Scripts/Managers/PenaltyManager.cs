@@ -45,7 +45,6 @@ public class PenaltyManager : MonoBehaviour
     public void AddLocalPenalty()
     {
         LevelPenalty++;
-        Debug.Log("[PenaltyManager] Local penalty increased: " + LevelPenalty);
 
         if (LevelPenalty >= penaltyThreshold)
         {
@@ -57,7 +56,6 @@ public class PenaltyManager : MonoBehaviour
     public void ResetLocalPenalty()
     {
         LevelPenalty = 0;
-        Debug.Log("[PenaltyManager] Local penalty reset.");
     }
 
     private void ConvertFakeDoorsToHorror()
@@ -67,13 +65,11 @@ public class PenaltyManager : MonoBehaviour
 
         if (registeredFakeDoors.Count == 0)
         {
-            Debug.LogWarning("[PenaltyManager] No FakeDoors available to convert.");
             return;
         }
 
         if (horrorDoorWallPrefab == null)
         {
-            Debug.LogError("[PenaltyManager] horrorDoorWallPrefab이 비어있습니다. 프리팹 교체 변환을 할 수 없습니다.");
             return;
         }
 
@@ -114,7 +110,6 @@ public class PenaltyManager : MonoBehaviour
             registeredFakeDoors.RemoveAt(index);
 
             // ✅ 로그(콘솔 클릭하면 오브젝트 선택됨)
-            Debug.Log("[PenaltyManager] Replaced FakeDoor with HorrorDoorWallPrefab.", newObj);
         }
     }
 }

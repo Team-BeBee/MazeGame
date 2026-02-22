@@ -164,7 +164,6 @@ private void RegisterIfFakeDoor(GameObject spawned)
         if (PenaltyManager.Instance != null)
         {
             PenaltyManager.Instance.RegisterFakeDoor(door);
-            Debug.Log("[MazeRenderer] FakeDoor registered to PenaltyManager.");
         }
         else
         {
