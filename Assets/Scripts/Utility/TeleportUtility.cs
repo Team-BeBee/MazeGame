@@ -20,13 +20,11 @@ public static class TeleportUtility
     {
         if (player == null)
         {
-            Debug.LogWarning("[TeleportUtility] Player not registered.");
             return;
         }
 
         if (walkableCells == null || walkableCells.Count == 0)
         {
-            Debug.LogWarning("[TeleportUtility] No walkable cells registered.");
             return;
         }
 
@@ -43,6 +41,5 @@ public static class TeleportUtility
         if (controller != null)
             controller.enabled = true;
 
-        Debug.Log("[TeleportUtility] Player teleported to " + target);
     }
 }

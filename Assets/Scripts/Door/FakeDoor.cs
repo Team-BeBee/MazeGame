@@ -26,8 +26,6 @@ public class FakeDoor : DoorBase
         // 플레이어를 미로의 임의 위치로 이동
         TeleportUtility.TeleportPlayerRandom();
 
-        // 디버그 로그
-        Debug.Log("[FakeDoor] 가짜 문이 열렸습니다. 페널티 적용 및 플레이어 텔레포트 완료.");
     }
 
     protected override void PlayOpenAnimation()

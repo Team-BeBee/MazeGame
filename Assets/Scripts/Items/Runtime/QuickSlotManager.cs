@@ -146,7 +146,6 @@ namespace MazeGame.Items.Runtime
 
         public bool UseSelected(ItemUseContext context)
         {
-            Debug.Log("UseSelected() 호출됨");
             if (slots == null || slots.Length == 0)
             {
                 return false;
